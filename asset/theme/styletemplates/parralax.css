@@ -1,0 +1,78 @@
+.parralax {
+    height: auto;
+    background-image: url('../images/parralax/parallax.jpeg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    transition: all 0.2s ease-in-out;
+}
+
+.parralax--content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+}
+
+.parralax--detail {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parralax--detail h3 {
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.parralax--detail:hover > p {
+    display: block;
+}
+
+.parralax--detail p {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+
+@media screen and (min-width: 768px) {
+    .parralax {
+        height: 200px;
+    }
+
+    .parralax--content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+    }
+
+    .parralax--detail h3 {
+        font-size: 1rem;
+    }
+    
+    .parralax--detail p {
+        text-align: center;
+        font-size: 0.8rem;
+        width: 80%
+    }
+
+    .line {
+        width: 2px;
+        height: 20px;
+        background-color: #fff;
+    }
+}

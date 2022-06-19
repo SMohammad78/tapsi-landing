@@ -1,0 +1,131 @@
+/* header */
+
+.main-header {
+    z-index: 1000;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.main-header .nav {
+    width: 100%;
+    height: 60px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--color-navbar);
+    z-index: 1000;
+}
+
+.nav a img {}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    margin: 0.3rem 0;
+    background-color: var(--color-body);
+    border-radius: 5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav__toggler:hover>.bar--two {
+    background-color: var(--color-primary);
+}
+
+.nav.nav__expanded .bar--one {
+    transform: rotate(-45deg) translate(-11px, 6px);
+}
+
+.nav.nav__expanded .bar--two {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.nav.nav__expanded .bar--three {
+    transform: rotate(45deg) translate(-5px, -1px);
+}
+
+.nav__toggler {
+    cursor: pointer;
+}
+
+.nav__list {
+    margin: 1rem 0 0 0;
+    width: 100%;
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-white);
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    z-index: 1000;
+
+}
+
+.nav.nav__expanded .nav__list {
+    max-height: 100vh;
+    opacity: 1;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    z-index: 100;
+}
+
+.nav__list .nav__item {
+    width: 100%;
+    padding: 0.9rem 0;
+}
+
+.nav__item a {
+    font-size: var(--primary-font-size);
+    color: var(--color-headings);
+    transition: all 0.2s ease-in;
+}
+
+.nav__item a:hover {
+    color: var(--color-primary);
+}
+
+.nav__item .btn {
+    margin: 0;
+    color: var(--color-white);
+}
+
+.nav__item .btn:hover {
+    color: var(--color-white);
+}
+
+@media screen and (min-width: 768px) {
+    .main-header {
+        background-color: var(--color-navbar);
+    }
+
+    .main-header .nav {
+        height: auto;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        background-color: var(--color-navbar);
+    }
+
+    .nav__toggler {
+        display: none;
+    }
+
+    .nav__list {
+        margin: 0;
+        width: auto;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        opacity: 1;
+        font-size: 1rem;
+    }
+
+    .nav__list .nav__item {
+        width: auto;
+        padding: 0 0.9rem;
+    }
+}
